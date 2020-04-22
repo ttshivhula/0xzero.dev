@@ -240,15 +240,14 @@
 
 
 <script>
-const fourthOfJuly = new Date("2020-04-25").getTime();
-console.log(fourthOfJuly);
+const target = new Date("2020-04-25").getTime();
 
 // countdown
 let timer = setInterval(function() {
 
   // get today's date
   const today = new Date().getTime();
-  const diff = fourthOfJuly - today;
+  const diff = target - today;
 
   // math
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
