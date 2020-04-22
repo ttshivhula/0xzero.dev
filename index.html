@@ -15,7 +15,7 @@
       }
        .container {
           position: relative;
-          margin: auto;
+          /*margin: auto;*/
           overflow: hidden;
           width: 650px;
           height: 480px;
@@ -36,7 +36,7 @@
           font-family: 'Lato', sans-serif;
           font-size: 1.5em;
           letter-spacing: 3px;
-          margin-top: 25%;
+          margin-top: 2em;
       }
        .days, .hours, .minutes, .seconds {
           display: inline-block;
@@ -85,6 +85,11 @@
           height: 65px;
           width: 70px;
       }
+       .site-name {
+          color: #ef2f3c;
+         font-weight: bold;
+         font-size: 3em;
+       }
        .red .triangle {
           border-bottom: 14px solid #ef2f3c;
       }
@@ -195,6 +200,13 @@
        footer a:hover {
           color: #276fbf;
       }
+      .star-ptr {
+         padding-right: 15px;
+         padding-left: 15px;
+         background-color: #f0a202;
+         margin-right: 10px;
+         color: #ff0000;
+       }
        p {
           font-size: 2em;
        }
@@ -202,36 +214,37 @@
 </head>
 <body>
 
-   <div class="container">
-  <div class="balloon white">
-    <div class="star-red"></div>
-  <div class="face">
-    <div class="eye"></div>
-    <div class="mouth happy"></div>
-  </div>
-  <div class="triangle"></div>
-  <div class="string"></div>
-</div>
+   <!--<div class="container">-->
+  <!--<div class="balloon white">-->
+    <!--<div class="star-red"></div>-->
+  <!--<div class="face">-->
+    <!--<div class="eye"></div>-->
+    <!--<div class="mouth happy"></div>-->
+  <!--</div>-->
+  <!--<div class="triangle"></div>-->
+  <!--<div class="string"></div>-->
+<!--</div>-->
 
-<div class="balloon red">
-  <div class="star"></div>
-  <div class="face">
-    <div class="eye"></div>
-    <div class="mouth happy"></div>
-  </div>
-  <div class="triangle"></div>
-  <div class="string"></div>
-</div>
+<!--<div class="balloon red">-->
+  <!--<div class="star"></div>-->
+  <!--<div class="face">-->
+    <!--<div class="eye"></div>-->
+    <!--<div class="mouth happy"></div>-->
+  <!--</div>-->
+  <!--<div class="triangle"></div>-->
+  <!--<div class="string"></div>-->
+<!--</div>-->
 
-<div class="balloon blue">
-  <div class="star"></div>
-  <div class="face">
-    <div class="eye"></div>
-    <div class="mouth happy"></div>
-  </div>
-  <div class="triangle"></div>
-  <div class="string"></div>
-</div>
+<!--<div class="balloon blue">-->
+  <!--<div class="star"></div>-->
+  <!--<div class="face">-->
+    <!--<div class="eye"></div>-->
+    <!--<div class="mouth happy"></div>-->
+  <!--</div>-->
+  <!--<div class="triangle"></div>-->
+  <!--<div class="string"></div>-->
+<!--</div>-->
+<h1 class="site-name"><span class="star-ptr">*</span>0xZero.dev</h1>
   <div id="timer"></div>
   <h1>Coming soon</h1>
 </div>
@@ -240,7 +253,7 @@
 
 
 <script>
-const target = new Date("2020-04-25").getTime();
+const target = new Date("2020-06-01").getTime();
 
 // countdown
 let timer = setInterval(function() {
