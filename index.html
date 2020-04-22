@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0xZero.dev</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
+       html {
+          display: grid;
+          min-height: 100%;
+      }
+       body {
+          display: grid;
+          background: #183059;
+      }
+       .container {
+          position: relative;
+          margin: auto;
+          overflow: hidden;
+          width: 650px;
+          height: 480px;
+      }
+       h1 {
+          font-family: 'Lato', sans-serif;
+          text-align: center;
+          margin-top: 2em;
+          font-size: 1.9em;
+          text-transform: uppercase;
+          letter-spacing: 7px;
+          color: #f6f4f3;
+      }
+       #timer {
+          color: #f6f4f3;
+          text-align: center;
+          text-transform: uppercase;
+          font-family: 'Lato', sans-serif;
+          font-size: 1.5em;
+          letter-spacing: 3px;
+          margin-top: 25%;
+      }
+       .days, .hours, .minutes, .seconds {
+          display: inline-block;
+          padding: 5px;
+          width: 130px;
+          border-radius: 5px;
+      }
+       .days {
+          background: #ef2f3c;
+      }
+       .hours {
+          background: #f6f4f3;
+          color: #183059;
+      }
+       .minutes {
+          background: #276fbf;
+      }
+       .seconds {
+          background: #f0a202;
+      }
+       .numbers {
+          font-family: 'Montserrat', sans-serif;
+          color: #183059;
+          font-size: 4em;
+      }
+       .white {
+          position: absolute;
+          background: #f6f4f3;
+          height: 85px;
+          width: 75px;
+          left: 30%;
+          top: 2%;
+      }
+       .white .triangle {
+          border-bottom: 14px solid #f6f4f3;
+      }
+       .white .string {
+          background: #f6f4f3;
+          border: 1px solid #f6f4f3;
+      }
+       .red {
+          position: absolute;
+          background: #ef2f3c;
+          left: 18%;
+          top: 9%;
+          height: 65px;
+          width: 70px;
+      }
+       .red .triangle {
+          border-bottom: 14px solid #ef2f3c;
+      }
+       .red .string {
+          background: #ef2f3c;
+          border: 1px solid #ef2f3c;
+      }
+       .blue {
+          position: absolute;
+          background: #276fbf;
+          height: 80px;
+          width: 80px;
+          left: 60%;
+          top: 5%;
+      }
+       .blue .triangle {
+          border-bottom: 14px solid #276fbf;
+      }
+       .blue .string {
+          background: #276fbf;
+          border: 1px solid #276fbf;
+      }
+       .balloon {
+          border: 1px solid #000;
+          border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
+          z-index: 2;
+      }
+       .eye {
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          top: 40%;
+          left: 22%;
+          background: #000;
+          border-radius: 50%;
+      }
+       .eye:after {
+          content: '';
+          left: 35px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #000;
+          position: absolute;
+      }
+       .mouth {
+          position: absolute;
+          top: 45%;
+          left: 43%;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+      }
+       .happy {
+          border: 2px solid;
+          border-color: transparent #000 #000 transparent;
+          transform: rotate(45deg);
+      }
+       .triangle {
+          position: absolute;
+          left: 40%;
+          bottom: -10%;
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+      }
+       .string {
+          position: absolute;
+          height: 70px;
+          width: 1px;
+          left: 48%;
+          top: 100%;
+          z-index: -1;
+      }
+       .star {
+          width: 20px;
+          height: 20px;
+          background: #f6f4f3;
+          -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      }
+       .star-red {
+          width: 30px;
+          height: 30px;
+          margin-left: 51px;
+          margin-top: -5px;
+          background: #ef2f3c;
+          -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      }
+       footer {
+          position: fixed;
+          bottom: 0;
+          text-transform: uppercase;
+          padding: 10px;
+          font-family: 'Lato', sans-serif;
+          font-size: 0.7em;
+      }
+       footer p {
+          letter-spacing: 3px;
+          color: #ef2f3c;
+      }
+       footer a {
+          color: #f6f4f3;
+          text-decoration: none;
+      }
+       footer a:hover {
+          color: #276fbf;
+      }
+       p {
+          font-size: 2em;
+       }
+    </style>
+</head>
+<body>
+
+   <div class="container">
+  <div class="balloon white">
+    <div class="star-red"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+
+<div class="balloon red">
+  <div class="star"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+
+<div class="balloon blue">
+  <div class="star"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+  <div id="timer"></div>
+  <h1>0xZero.dev Website launch counter</h1>
+</div>
+<footer>
+</footer>
+
+
+<script>
+const fourthOfJuly = new Date("2020-04-25").getTime();
+console.log(fourthOfJuly);
+
+// countdown
+let timer = setInterval(function() {
+
+  // get today's date
+  const today = new Date().getTime();
+  const diff = fourthOfJuly - today;
+
+  // math
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // display
+  document.getElementById("timer").innerHTML =
+    "<div class=\"days\"> \
+  <div class=\"numbers\">" + days + "</div>days</div> \
+<div class=\"hours\"> \
+  <div class=\"numbers\">" + hours + "</div>hours</div> \
+<div class=\"minutes\"> \
+  <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+<div class=\"seconds\"> \
+  <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+</div>";
+
+}, 1000);
+</script>
+
+</body>
+</html>
